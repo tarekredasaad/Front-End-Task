@@ -1,0 +1,40 @@
+@use "igniteui-angular/theming" as *;
+
+
+igx-time-picker {
+    width: 400px;
+}
+
+$my-time-picker-theme: time-picker-theme(
+  $text-color: #4076eb,
+  $hover-text-color: #4076eb,
+  $selected-text-color: #4076eb,
+  $header-background: #4076eb,
+  $header-hour-text-color: #fafdff,
+  $header-time-period-color: #fafdff,
+  $background-color: #fafdff
+  );
+  
+  $dark-button: button-theme(
+      $foreground: #4076eb,
+      $hover-background: #4076eb
+      );
+
+:host ::ng-deep {
+    @include css-vars($my-time-picker-theme);
+    @include css-vars($dark-button);
+}
+
+.ltr-container {
+    text-align: left;
+    direction: ltr;
+}
+
+/* RTL Styles */
+.rtl-container {
+    text-align: right;
+    direction: rtl;
+}
+igx-time-picker {
+    width: 400px;
+}

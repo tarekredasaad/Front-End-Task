@@ -1,0 +1,178 @@
+<div id="firstPage"class="container" >
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-between align-items-center">
+        <span class=" text-end">{{ 'messages.AddNewResources' | translate}}</span>
+        <span class="text-start d-flex mb-3 justify-content-between align-items-center"> 
+          <div class="text-start form-check form-switch">
+            <input class="form-check-input me-2" type="checkbox" id="flexSwitchCheckDefault">
+            <label class="form-check-label me-2" for="flexSwitchCheckDefault">{{'messages.Active' |translate}}</label>
+          </div>
+          <div class="d-flex">
+
+            <span class="btn btn-dark text-light me-2" (click)="sendData()">{{'messages.Savechange' | translate}}</span>
+            <span class="btn btn-outline-danger ">{{ 'messages.Deletechange'| translate}}</span>
+          </div>
+        </span>
+      </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+              
+            <div class="">
+              <div class="overlap" style="background-color: white;
+               border-radius:10px;">
+                <div class="overlap-group-wrapper bg-block" 
+                style=" 
+               
+                
+                height: 208px;">
+                  <div class="overlap-group ">
+                    <div class="row ">
+                      <div class="d-flex ">
+                          <!-- src="user_male.jpg" -->
+                          <div class="">
+
+                            <img 
+                            class="avatar-image ms-3 image"
+                            [src]="url"
+                            >
+                            <!-- <form (submit)="onSubmit()"> -->
+  
+                            <label for="licenseImg"></label>
+                            <div class="custom-file">
+                              <input type="file"  class="inputFile" id="licenseImg" (change)="onLicenseImgChange($event)">
+                              <label class="custom-file-label" for="licenseImg"></label>
+                            </div>
+                          </div>
+                          <!-- <button type="submit">Upload Image</button> -->
+
+                          <!-- </form> -->
+                          <div class="flex-fill ms-3">
+                            <div class="text-wrapper-2 p-2">{{'messages.NameofResources'| translate}}</div>
+  
+                            <div class="div-wrapper " style=" 
+                            background-color: #f4eeee;
+                            border-radius: 9px;
+                            border: 1px solid;
+                            border-color: #b2a6a6;">
+                            <!-- <input type="text"  placeholder="هيثم محمد"> -->
+                              <input type="text" [(ngModel)]="supplierData.name" class="text-wrapper ps-4 pb-2 pe-4 pt-2"[placeholder]=" 'messages.HythamMohamed' | translate" >
+                              <!-- </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="">
+              <div class="mt-4 pt-3" style="background-color: white;
+               border-radius:10px;
+               height:max-content">
+  
+                  <div class="group-2 d-flex justify-content-around ">
+                    <div class="group-5">
+                      <div class="text-wrapper-5">{{'messages.Choosethetypeofresources'    | translate}}</div>
+                    </div>
+                    <label for="ReservationType">
+                      
+                      <div class="group-3">
+                        <div class="radio"></div>
+                        <input type="radio" [value]="true" [(ngModel)]="checkType"
+                         name="ReservationType" class="me-2">
+                        <span class="text-wrapper-3">{{ 'messages.Reservationduringtheday'| translate}}</span>
+                      </div>
+                      <div class="group-4">
+                        <div class="radio-2"></div>
+                        <input type="radio" [value]="false" [(ngModel)]="checkType"
+                         name="ReservationType"  class="me-2">
+                        <span class="">{{'messages.Morethanoneday'  | translate}}</span>
+                        <p class="">
+                          <!-- <span class="span">{{'messages.Reservationforaperiod'  | translate}}</span> -->
+                        </p>
+                      </div>
+                    </label>
+                  </div>
+              </div>
+            </div>
+        </div>
+     
+      <div class="col-lg-6 col-md-6 col-sm-12 "> 
+            <div class="p-2" style="background-color: white;
+                height:285px;
+                border-radius:10px;">
+
+                <div>{{ 'messages.Resourceavailableuntil' | translate}}</div>
+                <div>
+                    <input type="number" [(ngModel)]="supplierData.SupplierNumber" class="bg-block resourceNumber">
+                    <select class="perPeriod">
+                      <option value="1">1</option>
+                    </select>
+                </div>
+                <div>{{'messages.resourcetime' | translate}}</div>
+                <div class="mt-4 d-flex ">
+                  <label for="time" class="w-75 p-2">
+                    <input class="me-3 ms-3" type="radio"  
+                    id="constant" name="time" [(ngModel)]="check" [value]="false" >{{'messages.Servicetime'  | translate}}
+                    <input class="me-3" type="radio" 
+                     id="service"  name="time"
+                    [(ngModel)]="check" [value]="true" >{{'messages.Fixedtime'  | translate}}
+                  </label>
+                  <!-- *ngIf="constant.checked" -->
+                  <span  *ngIf="check"
+                  class="content_time bg-block w-25 p-2 mr-2 text-center"> 
+                  <span class="markcontrol p-2 w-25" (click)="plus()"> + </span>
+                  <span class="w-50" [(ngModel)]="supplierData.Reservationtime" >{{mintues}} دقيقة</span>
+                  <span class="markcontrol p-2 w-25" (click)="minus()"> - </span>
+                  
+                </span>
+              </div>
+              <div>{{'messages.multiplereservation' | translate}}</div>
+              <div class="d-flex">
+                
+                <label for="reservation">
+                  <input class="me-3 ms-3" type="radio" [(ngModel)]="reserved" 
+                  name="reservation" [value]="false" >{{'messages.Reservationforonepersononly'  | translate}}
+                  <input class="me-3" type="radio" [(ngModel)]="reserved"  name="reservation"
+                  [value]="true" >{{'messages.Reservationformultiplepeopleatthesametime'  | translate}}
+                </label>
+                <span  *ngIf="reserved">
+                  <input type="number" [(ngModel)]="supplierData.ReservationNumber" name="" id="" class="w-100 resourceNumber">
+                  
+                </span>
+              </div>
+                
+                <div class="mt-4">
+                  <!-- <label for="">{{'messages.Reservationforonepersononly'  | translate}}
+                    <input type="radio">
+                  </label> -->
+                  <!-- <label for="">{{'messages.Reservationformultiplepeopleatthesametime'  | translate}}
+                    <input type="radio">
+                  </label> -->
+                  
+                </div>
+                
+            </div>
+      </div>
+      <!-- <div class="col-lg-10 col-md-9 col-sm-12 bg-block mt-4"
+      style="background-color: white;
+      height:500px;" >
+        <div></div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">السبت</label>
+        </div>
+
+      </div> -->
+    </div>
+    <button (click)="switchLanguage('en')">English</button>
+    <button (click)="switchLanguage('ar')">arabic</button>
+    <app-second></app-second>
+
+</div>
+
+<!-- <mat-form-field appearance="outline">
+    <mat-label>Input type time</mat-label>
+    <input type="time" matInput name="week" min="09:00" max="18:00" />
+  </mat-form-field> -->

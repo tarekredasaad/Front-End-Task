@@ -1,0 +1,26 @@
+{
+    "messages": {
+      "AddNewResources": "Add New Resources",
+      "Savechange": "Save change",
+      "Deletechange": "Delete change",
+  "Active": "Active",
+  "NameofResources": "Name of Resources",
+  "HythamMohamed": "Hytham Mohamed",
+  "Reservationduringtheday": "Reservation during the day",
+  "Reservationforaperiod": "Reservation for a period",
+  "Morethanoneday": "More than one day",
+  "Choosethetypeofresources": "Choose the type of resources",
+  "Resourceavailableuntil": "Resource available until",
+  "resourcetime": "resource time",
+  "Servicetime": "Service time",
+  "Fixedtime": "Fixed time",
+  "multiplereservation": "multiple reservation",
+  "Reservationforonepersononly": "Reservation forbperson ",
+  "Reservationformultiplepeopleatthesametime": "Reservation for multiple people ",
+  "AdvancedSetting": "Advanced Setting",
+  "Setting": "Setting",
+  "detremineWorktime": "detremine Work time for resource",
+  "instructions": "Configure your week settings here. Simply move the scroll bars and add or remove break times for your work hours configuration."
+
+}
+  }

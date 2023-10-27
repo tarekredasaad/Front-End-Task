@@ -1,0 +1,51 @@
+#firstPage{
+  background-color:#dfe1e3 ;
+}
+
+.ltr-container {
+    text-align: left;
+    direction: ltr;
+  }
+  
+  /* RTL Styles */
+  .rtl-container {
+    text-align: right;
+    direction: rtl;
+  }
+.custom-file{
+  
+    width: 50px;
+}
+.image{
+  height: 95px;
+    border-radius: 30px;
+    padding: 6px;
+    width: 70px
+}
+.inputFile{
+  // background-color: aqua;
+}
+  .content_time{
+    border-radius: 10px;
+    background-color: #f4eeee;
+  }
+  .markcontrol{
+    border-radius: 10px;
+    background-color: blue;
+    // width: 30px;
+    // height: 25px;
+  }
+.text-wrapper{
+  
+  background-color: #f4eeee;
+  border:none;
+}
+.resourceNumber{
+  background-color: #f4eeee;
+    border-radius: 6px;
+    width: 88%;
+    padding: 4px;
+}
+.perPeriod{
+  width:10%;
+}

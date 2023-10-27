@@ -1,0 +1,24 @@
+{
+    "messages": {
+      "AddNewResources": "إضافة موارد جديدة",
+      "Savechange": "حفظ التغييرات",
+      "Deletechange": "حذف التغييرات",
+      "Active": "مفعل",
+      "NameofResources": "اسم الموارد",
+      "HythamMohamed": "هيثم محمد",
+      "Reservationduringtheday": "حجز خلال اليوم",
+      "Reservationforaperiod": "حجز مدة",
+      "Morethanoneday": "أكثر من يوم",
+      "Choosethetypeofresources": "اختر نوع الموارد",
+      "Resourceavailableuntil": "المورد متاح إلى",
+      "resourcetime": "وقت المورد",
+      "Servicetime": "وقت الخدمة",
+      "Fixedtime": "وقت ثابت",
+      "multiplereservation": "الحجز المتعدد",
+      "Reservationforonepersononly": "حجز واحد فقط",
+      "Reservationformultiplepeopleatthesametime": "حجز اكثر من شخص لنفس الموعد",
+      "instructions": "تكوين إعدادات الأسبوع الخاص بك هنا ما عليك سوى تحريك أشرطة التمرير وإضافة أو إزالة أوقات الراحة لأعداد ساعات العمل."
+
+    }
+  }
+  

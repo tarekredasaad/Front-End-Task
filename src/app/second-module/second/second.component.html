@@ -1,0 +1,101 @@
+<div id="main" class="col-lg-12 col-md-12 col-sm-12 bg-block mt-4 p-3"
+          style="background-color: white;
+          height:500px;" >
+          <div class="text-end">حدد مواعيد العمل للمورد</div>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="text-end">تكوين إعدادات الأسبوع الخاص بك هنا ما عليك سوى تحريك أشرطة
+                 التمرير وإضافة أو إزالة أوقات الراحة لأعداد ساعات العمل</span>
+              <span class="text-start">
+
+                <span class="btn btn-primary">إعدادات متقدمة</span>
+                <span class="btn btn-primary">إعدادات تقليدية</span>
+              </span>
+            </div>
+            
+
+            <div [formGroup]="dataform" *ngFor="let day of days ;let i = index" id="{{i}}"  class=" ">
+                <div class=" d-flex p-3 justify-content-between align-items-center ">
+
+                    <div class="form-check form-switch  ">
+                        <input class="form-check-input" (click)="controlDay(i)" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">{{day.content}}</label>
+                    </div>
+                    <span *ngIf="day.checked" id="containerTimePicker{{i}}"  class="d-flex">
+                            <span formControlName="day" hidden >{{day.content}}</span>
+                        <span>
+                          <!-- <input type="text" class="form-control" (click)="showTimeList()" name="" id="">تاريخ البدأ -->
+                          <div>
+                            <label for="startTime"> start Time</label>
+                             <input type="time" name="startTime"  placeholder="09:00 صباجا" value="09:00" >
+                          </div>
+                          <div formArrayName="froms"
+                            *ngFor="let from of froms.controls; let i=index">
+                            <label>start Time {{i+1}}</label>
+                            <input type="time" class="form-control" [formControlName]="i">
+                            <!-- <button (click)="deleteEmail(i)" class="btn btn-danger float-right">-</button> -->
+                        </div>
+                        </span>
+                        <span>
+                            <div> 
+                                <!-- <igx-time-picker #picker [(ngModel)]="TimeOfWork[i].to" [overlaySettings]="{ outlet: element }" mode="dialog">
+                                <label igxLabel>وقت الإنتهاء</label></igx-time-picker>
+                                <ng-template igxTimePickerActions>
+                                    <div>
+                                        <button igxButton="flat" (click)="picker.cancelButtonClick()">cancel</button>
+                                        <button igxButton="flat" (click)="picker.okButtonClick()">ok</button>
+                                    </div>
+                                </ng-template> -->
+                                <label for="startTime"> start Time</label>
+                             <input type="time" name="startTime"   >
+                         
+                            </div>
+                            <div formArrayName="tos"
+                            *ngFor="let to of tos.controls; let i=index">
+                            <label>end Time {{i+1}}</label>
+                            <input type="time" class="form-control" [formControlName]="i">
+                            <!-- <button (click)="deleteEmail(i)" class="btn btn-danger float-right">-</button> -->
+                        </div>
+                        </span>
+                        <span class="p-2" (click)="add(i)">+</span>
+                        <span class="p-2">-</span>
+                    </span>
+                      <!-- <input type="text" class="form-control" (click)="showTimeList()" name="" id="">تاريخ الإنتهاء -->
+                </div>
+                
+            </div>
+
+            <!-- <form [formGroup]="timeForm" (ngSubmit)="submitData()">
+                <div formArrayName="days">
+                  <div *ngFor="let day of getDayControls(); let i = index" [formGroupName]="i">
+                    <div formArrayName="times">
+                      <div *ngFor="let time of getTimeControls(day); let j = index" [formGroupName]="j">
+                        <input type="time" formControlName="" placeholder="HH:MM" />
+                      </div>
+                      <button type="button" (click)="addTime(day)">Add Time Input</button>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">send</button>
+
+              </form> -->
+            <!-- <igx-time-picker mode="dialog" [headerOrientation]="'vertical'">
+                <label igxLabel>Time</label>
+            </igx-time-picker> -->
+            <!-- <div class="form-time-picker">
+                <igx-time-picker name="time-picker" [(ngModel)]="date" >
+                    <label igxLabel>Time</label>
+                </igx-time-picker>
+            </div> -->
+            <!-- <div id="showTimeList" class="d-none w-50">
+                <div >
+                    <span class="w-100 text-center">الدقيقة</span> 
+                    <span class="w-100 text-center">الساعة</span> 
+                </div>
+                <div>
+                    <span class="w-100 text-center">2</span>
+                    <span class="w-100 text-center">55</span>
+                </div>
+                
+            </div> -->
+
+</div>
